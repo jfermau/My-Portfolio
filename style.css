@@ -475,48 +475,57 @@ section {
 /* =========================
    HEADER RESPONSIVE
 ========================= */
+
+/* Hamburger (hidden desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.9rem;
+  color: var(--text);
+  cursor: pointer;
+  right: 24px;
+  top: 18px;
+}
+
+/* Mobile */
 @media (max-width: 900px) {
+
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .menu {
-    flex-direction: column;
-    gap: 16px;
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-    display: none; /* caché par défaut */
+    background: rgba(10,12,18,0.95);
+    backdrop-filter: var(--blur);
+    border-top: 1px solid var(--border);
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    display: none;
   }
 
   .menu.show {
     display: flex;
   }
 
+  .menu a {
+    font-size: 1.1rem;
+  }
+
   .cv-btn {
-    position: static; /* ne reste plus à droite */
+    position: static;
     width: 100%;
   }
 
   .cv-btn a {
-    display: block;
     width: 100%;
     text-align: center;
-    margin-top: 10px;
   }
-
-  /* Hamburger button */
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--text);
-    position: absolute;
-    top: 18px;
-    right: 24px;
-  }
-}
-
-/* Masquer le hamburger sur grand écran */
-.hamburger {
-  display: none;
 }

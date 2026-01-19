@@ -17,21 +17,23 @@
   <!-- HEADER -->
   <header class="header">
     <nav>
-      <div class="hamburger">
+      <!-- Hamburger (mobile only) -->
+      <div class="hamburger" id="hamburger">
         <i class='bx bx-menu'></i>
       </div>
-      <ul class="menu">
+    
+      <ul class="menu" id="menu">
         <li><a href="#top" class="scroll-transition">Accueil</a></li>
         <li><a href="#compétences" class="scroll-transition">Compétences</a></li>
         <li><a href="#formations" class="scroll-transition">À Propos de Moi</a></li>
         <li><a href="#contact" class="scroll-transition">Contact</a></li>
-
         <li class="cv-btn">
-          <a href="CV_Jules_Fermaut.pdf" download="CV_Jules_Fermaut.pdf">Mon CV</a>
+          <a href="CV_Jules_Fermaut.pdf" download>Mon CV</a>
         </li>
       </ul>
-    </nav>
+    </nav>    
   </header>
+  
 
   <!-- MAIN -->
   <main class="main">
@@ -134,7 +136,7 @@
       
           <!-- COLONNE EDUCATION -->
           <div class="about-col">
-            <h2 class="about-subtitle">Éducation</h2>
+            <h2 class="about-subtitle">Formations</h2>
       
             <div class="about-item">
               <span class="about-date">2022 – 2025</span>
@@ -164,8 +166,8 @@
               <h3>Ingénieur développeur IHM</h3>
               <p class="about-company">ArcelorMittal France</p>
               <p>
-                Développement d’interfaces web industrielles pour le suivi et la visualisation de processus.
-                Intégration de solutions Azure, authentification Azure AD et accès automatisé aux données.
+                Développement d’interfaces industrielles Angular/.NET pour la visualisation en temps réel du gerbage de brames d’acier.
+                Intégration de l’authentification Azure AD et automatisation de l’accès aux données (WebHDFS, Puppeteer), en collaboration avec les équipes métiers pour le recettage et le diagnostic.
               </p>
             </div>
       
@@ -174,8 +176,7 @@
               <h3>Développeur Full-Stack</h3>
               <p class="about-company">ESI4U</p>
               <p>
-                Conception d’interfaces Angular connectées à des systèmes .NET pour visualiser les
-                séquences de gerbage d’acier en temps réel. Travail en lien direct avec les équipes métiers.
+                Développement d’une application web en PHP, MySQL, HTML/CSS et JavaScript, avec mise en place d’un système de relance client automatisé.
               </p>
             </div>
       
@@ -252,16 +253,21 @@
 
   <p class="footer-copy">© 2025 Jules Fermaut • Built with HTML & CSS</p>
 </footer>
-
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const menu = document.querySelector('.menu');
-  
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('show');
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
   });
-  </script>
-  
+
+  // Ferme le menu quand on clique sur un lien
+  document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("show");
+    });
+  });
+</script>
 
 </body>
 
