@@ -105,6 +105,12 @@ nav {
   font-weight: 600;
 }
 
+.cv-btn a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,159,10,0.4);
+}
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -286,6 +292,12 @@ nav {
   color: var(--blue);
   margin-bottom: 16px;
 }
+
+.skill-icon.angular,
+.skill-icon.ts {
+  color: var(--orange);
+}
+
 
 .skill-card h3 {
   font-size: 1.1rem;
